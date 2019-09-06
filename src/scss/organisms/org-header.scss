@@ -1,0 +1,41 @@
+.header {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // Dism /Online /Cleanup-Image /RestoreHealth
+  &--logo {
+    flex: 0 0 20%;
+    img {
+      max-width: 100%;
+    }
+  }
+  &--nav {
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+
+    a {
+      display: inline-block;
+      margin-right: 15px;
+      color: #bbb;
+      text-decoration: none;
+
+      &.active {
+        color: darken(#bbb, 20);
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -5px;
+          transform: translateX(-50%);
+          height: 3px;
+          width: 100%;
+          background-color: rgb(173, 48, 48);
+        }
+      }
+    }
+  }
+}
