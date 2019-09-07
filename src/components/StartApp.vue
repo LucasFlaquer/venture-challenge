@@ -15,3 +15,13 @@ export default {
   
 }
 </script>
+<style lang="scss">
+  .home {
+    padding: 30px;
+
+    &--title {
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+  }
+</style>

@@ -1,10 +1,13 @@
 .footer {
-  padding: 15px;
+  // height: 10vh;
+  padding: 30px;
 
   .info {
     display: flex;
     justify-content: space-between;
-
+    &--number {
+      color: red;
+    }
   }
 
   &__interna {

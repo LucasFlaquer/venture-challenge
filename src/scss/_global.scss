@@ -6,8 +6,9 @@ body {
   margin: 0;
   // font-family: ;
 }
-
-.model--wrap {
-  height: 100%;
-  padding: 15px;
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
