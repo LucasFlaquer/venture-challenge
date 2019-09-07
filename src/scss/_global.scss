@@ -6,9 +6,28 @@ body {
   margin: 0;
   font-family: 'Saira Condensed', sans-serif;
 }
-#app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.btn {
+  &-step {
+    text-decoration: none;
+    color: black;
+    font-weight: 300; 
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 30px;
+      background-image: url("../assets/arrow-left.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+    }
+  }
 }

@@ -3,7 +3,6 @@
     <OrgHeader/>
     <div class="model--wrap">
       <StartApp/>
-
     </div>
     <OrgFooter/>
   </div>
