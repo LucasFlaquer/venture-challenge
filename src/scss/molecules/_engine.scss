@@ -5,16 +5,20 @@
     align-items: center;
     padding: 20px;
   }
-  &--label {
+  &--item {
     width: 100%;
-    padding: 15px;
+    padding: 20px 15px;
     margin-bottom: 30px;
-    background-color: #F7F9FA;
+    background-color: rgb(224, 226, 226);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     color: darken(#F7F9FA, 20);
     cursor: pointer;
+    p {
+      margin-bottom: 0;
+    }
     &.active {
       p {
         color: $black;
@@ -29,9 +33,17 @@
       }
     }
   }
+  &--price {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    color: $dark-red;
+    
+  }
   &--image {
+    // max-height: 500px;
     img {
-      max-width: 300px;
+      max-width: 100%;
     }
   }
 }

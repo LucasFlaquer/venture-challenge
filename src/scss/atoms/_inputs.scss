@@ -6,6 +6,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 18px;
+  width: 18px;
   
   input[type=radio] {
     position: absolute;
@@ -24,8 +26,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 18px;
-    height: 18px;
+    width: inherit;
+    height: inherit;
     border: 1px solid #ddd;
     border-radius: 100%;
     background: #fff;
