@@ -1,0 +1,33 @@
+.engine {
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  &--label {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: #F7F9FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: darken(#F7F9FA, 20);
+    
+    &.active {
+      p {
+        color: $black;
+        span {
+          color: $gray;
+        }
+
+        &:first-child {
+          span {
+            color: $dark-red;
+          }
+        }
+      }
+    }
+  }
+}
