@@ -2,14 +2,18 @@
   <footer class="footer footer__interna"> 
     <div class="preview">
       <div class="preview--item">
-        <p class="preview--total">{{total+engine | formatPrice}}</p>
+        <p class="preview--total">
+          <span>{{total+engine.price+color.price+wheel.price | formatPrice}}</span>
+        </p>
       </div>
       <div class="preview--item">
-        <!-- <p>{{engine.type}} <span>{{engine.type}}</span></!-->
-      {{engine.type}}
+        <p>Model R</p>
+      </div>
+      <div class="preview--item">
+        <p>{{engine.kwh}} <span>{{color.price}}</span></p>
       </div>
     </div>
-    <a @click="next" href="#" class="btn btn-step">Begin</a>
+    <a @click="next" href="#" class="btn btn-step">Next</a>
   </footer>
 </template>
 
@@ -18,13 +22,16 @@ export default {
   props: {
     next: Function,
     total: Number,
-    engine:Number,
+    engine: Object,
+    color: Object,
+    wheel: Object
+
   },
   filters: {
     formatPrice(price) {
       return (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     }
-  }
+  },
 }
 </script>
 

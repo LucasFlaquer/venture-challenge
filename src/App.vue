@@ -6,19 +6,20 @@
       <EngineForm @clicked="onClickChild" v-if="steeps===1" :next="next" :engines="engines"/>
     </div>
     <OrgFooter v-if="steeps==0" />
-    <!-- <OrgFooterInterna 
+    <OrgFooterInterna 
       :next="next"
       :total="price"
-      :engine="engines[engineIndex].price"
-      
-      v-if="steeps > 0 & steeps<4" /> -->
+      :engine="engines[engineIndex]"
+      :color="colors.items[colorIndex]"
+      :wheel="wheels[wheelIndex]"     
+      v-if="steeps > 0 && steeps<4 && engines.length" />
   </div>
 </template>
 
 <script>
 import OrgHeader from './components/OrgHeader'
 import OrgFooter from './components/OrgFooter-home'
-//import OrgFooterInterna from './components/OrgFooterResult'
+import OrgFooterInterna from './components/OrgFooterResult'
 import StartApp from './components/StartApp'
 import EngineForm from './components/EngineForm'
 import { Request } from './request'
@@ -28,7 +29,7 @@ export default {
   components: {
     OrgHeader,
     OrgFooter,
-    //OrgFooterInterna,
+    OrgFooterInterna,
     StartApp,
     EngineForm,
   },
@@ -36,12 +37,12 @@ export default {
     return {
       steeps: 1,
       total: 0,
-      colors: [],
+      colors: {},
       wheels:[],
       engines:[],
       engineIndex: 0,
       colorIndex: 0,
-      whellIndex: 0,
+      wheelIndex: 0,
       price: 0,
     }
   },
@@ -56,17 +57,14 @@ export default {
   mounted: function() {
     Request()
     .then((response)=> {
-      this.colors - response.data.color.items;
+      Object.assign(this.colors, response.data.color);
       this.wheels = response.data.wheels.items;
       this.engines = response.data.engine.items;
       this.price = response.data.price;
-      console.log(response.data.engine.items) 
-      console.log(this.engines);
     })
     .catch((error)=> {
       console.log(error);
     });
-    console.log('---------------debug--------');
   }
 }
 </script>
