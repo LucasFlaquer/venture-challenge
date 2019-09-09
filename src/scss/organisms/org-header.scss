@@ -1,11 +1,12 @@
 .header {
   padding: 20px 30px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // Dism /Online /Cleanup-Image /RestoreHealth
   &--logo {
     flex: 0 0 20%;
+    margin-bottom: 0;
     img {
       max-width: 100%;
     }
@@ -15,27 +16,39 @@
     align-items: space-around;
     justify-content: center;
 
-    a {
-      display: inline-block;
-      margin-right: 15px;
-      color: #bbb;
-      text-decoration: none;
+  }
+  &--link {
+    display: inline-block;
+    margin-right: 15px;
+    color: #bbb;
+    text-decoration: none;
+    
+    &.active {
+      color: darken(#bbb, 20);
+      position: relative;
 
-      &.active {
-        color: darken(#bbb, 20);
-        position: relative;
-
-        &:before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          bottom: -5px;
-          transform: translateX(-50%);
-          height: 3px;
-          width: 100%;
-          background-color: rgb(173, 48, 48);
-        }
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        transform: translateX(-50%);
+        height: 3px;
+        width: 100%;
+        background-color: rgb(173, 48, 48);
       }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .header {
+    overflow: hidden;
+    margin-bottom: 40px;
+    &--logo {
+      flex-basis: 180px;
+    }
+    &--link {
+      white-space: nowrap;
     }
   }
 }

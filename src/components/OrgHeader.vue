@@ -1,14 +1,14 @@
 <template>
   <header class="header">
     <figure class="header--logo">
-      <img src="" alt="">
+      <img src="@/assets/RV_Logo_Pure_White.png" alt="">
     </figure>
     <nav class="header--nav">
-      <a href="#" class="active">Model R</a>
-      <a href="#">Model IQ</a>
-      <a href="#">Model Mobi</a>
-      <a href="#">Model Charlie</a>
-      <a href="#">Model Italy</a>
+      <a href="#" class="header--link active">Model R</a>
+      <a href="#" class="header--link">Model IQ</a>
+      <a href="#" class="header--link">Model Mobi</a>
+      <a href="#" class="header--link">Model Charlie</a>
+      <a href="#" class="header--link">Model Italy</a>
     </nav>
   </header>
 </template>
@@ -19,5 +19,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "~@/scss/organisms/org-header";
+  @import "~@/scss/organisms/org-header";
 </style>
