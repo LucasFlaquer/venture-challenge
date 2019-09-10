@@ -38,6 +38,13 @@
     }
   }
 }
+@media (max-width: 767px) {
+  .home {
+    &--title {
+      font-size: 65px;
+    }
+  }
+}
 @media (max-width: 575px) {
   .home {
     &--wrap {

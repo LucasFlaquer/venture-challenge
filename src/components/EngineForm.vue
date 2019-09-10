@@ -2,9 +2,10 @@
   <b-container class="engine">
     <b-row>
       <b-col cols="12" md="6">
-        <figure class="engine--image">
+        <picture class="engine--image">
+          <source :srcset="imageUrlMobile" media="(max-width: 767px)">
           <img :src="imageUrl" alt="">
-        </figure>
+        </picture>
       </b-col>
       <b-col cols="12" md="6">
           <h2 class="option--title">Engine</h2>
@@ -41,7 +42,8 @@ export default {
   data() {
     return {
       engineSelected: 1,
-      imageUrl: require(`@/assets/Engine1.jpg`)
+      imageUrl: require(`@/assets/Engine1.jpg`),
+      imageUrlMobile: require(`@/assets/Engine1_xs.jpg`)
     }
   },
   props: {
@@ -50,10 +52,13 @@ export default {
   methods: {
     changeImage(id) {
       if(id === 1) {
-        this.imageUrl = require(`@/assets/Engine1.jpg`)
+        this.imageUrl = require(`@/assets/Engine1.jpg`);
+        this.imageUrlMobile = require(`@/assets/Engine1_xs.jpg`)
       }
-      else
-        this.imageUrl = require(`@/assets/Engine2.jpg`)
+      else{
+        this.imageUrl = require(`@/assets/Engine2.jpg`);
+        this.imageUrlMobile = require(`@/assets/Engine2_xs.jpg`);
+      }
     },
 		emit(engine) {
 			this.$emit('clicked',engine);
