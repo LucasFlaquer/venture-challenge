@@ -15,5 +15,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import "~@/scss/molecules/home"
+  @import "~@/scss/molecules/home";
 </style>

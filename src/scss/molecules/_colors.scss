@@ -47,12 +47,26 @@
     }
   }
 }
-
 @media (max-width: 575px) {
   .color {
     &--form {
       margin-bottom: 40px;
     }
+    &--item {
+      border: 5px solid $gray;
+      height: 40px;
+      width: 40px;
+    }
+    &--image {
+      margin-top: 10px;
+      figcaption {
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .color {
     &--item {
       border: 5px solid $gray;
       height: 35px;

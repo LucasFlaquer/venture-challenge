@@ -1,14 +1,14 @@
 <template>
   <b-container class="color">
     <b-row>
-      <b-col cols="12" md="6">
+      <b-col cols="12" lg="6">
         <figure class="color--image">
           <img :src="imageUrl" alt="">
           <figcaption>{{colors[colorSelected].label }}</figcaption>
           <figcaption>{{colors[colorSelected].price | exibePreco }}</figcaption>
         </figure>
       </b-col>
-      <b-col cols="12" md="6">
+      <b-col cols="12" lg="6">
           <h2 class="option--title">Color</h2>
           {{desc}}
         <form action="" class="color--form">
@@ -17,7 +17,7 @@
             :for="'color'+index"
             class="color--item" 
             :class="colorSelected === index ? 'active': ''"
-            @click="trocaImg(index)">
+            @click="trocaImg(index), emit(index)">
               <img :src="dotUrl[index]" alt="">
               <input v-model="colorSelected" type="radio" name="color" :value="index" :id="'color'+index" >
             </label>
@@ -53,7 +53,10 @@ export default {
       } else {
         this.imageUrl = require(`@/assets/Grey.jpg`);
       }
-    }
+    },
+    emit(color) {
+			this.$emit('clicked',color);
+		}
   },
   filters: {
     exibePreco(price) {
