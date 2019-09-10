@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      steeps: 1,
+      steeps: 0,
       total: 0,
       colors: {},
       wheels:[],

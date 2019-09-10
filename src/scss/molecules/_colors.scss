@@ -1,18 +1,19 @@
 .color {
   &--form {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
   }
   &--item {
     border-radius: 100%;
-    background: green;
-    border: 10px solid $gray;
+    border: 8px solid $gray;
     position: relative;
     cursor: pointer;
-    height: 60px;
-    width: 60px;
+    height: 58px;
+    width: 58px;
     img {
       max-width: 100%;
       border-radius: 100%;
@@ -21,6 +22,47 @@
     }
     input[type=radio] {
       visibility: hidden;
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &.active {
+      border-color: $border-color;
+    }
+  }
+  &--image {
+    margin-top: 50px;
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      font-size: 22px;
+      margin-bottom: 10px;
+      &:last-child {
+        color: $dark-red;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .color {
+    &--form {
+      margin-bottom: 40px;
+    }
+    &--item {
+      border: 5px solid $gray;
+      height: 35px;
+      width: 35px;
+    }
+    &--image {
+      margin-top: 10px;
+      figcaption {
+        text-align: center;
+      }
     }
   }
 }
