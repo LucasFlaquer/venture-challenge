@@ -10,7 +10,7 @@
         <p>Model R</p>
       </div>
       <div class="preview--item">
-        <p>{{engine.kwh}} <span>{{color.price}}</span></p>
+        <p>{{engine.kwh}} <span>{{engine.type}}</span></p>
       </div>
     </div>
     <a @click="next" href="#" class="btn btn-step">Next</a>
@@ -29,7 +29,9 @@ export default {
   },
   filters: {
     formatPrice(price) {
-      return (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+      // let price2 = price.toString();
+      // return `$${price2[0]}${price2[1]}.${price2[ ...]}`
+      return `$${(price).toFixed(0).replace(/\d(?=(\d{2})+\.)/g, '$&,')}`;
     }
   },
 }
