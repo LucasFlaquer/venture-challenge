@@ -3,8 +3,8 @@
     <OrgHeader/>
     <div class="model--wrap">
       <StartApp v-if="steeps===0" :next="next"/>
-      <EngineForm @clicked="onClickChild" v-if="steeps===1" :next="next" :engines="engines"/>
-      <ColorForm v-if="steeps === 2" :next="next"
+      <EngineForm @clicked="engineChild" v-if="steeps===1" :next="next" :engines="engines"/>
+      <ColorForm v-if="steeps === 2" :next="next" @clicked="colorChild"
       :colors="colors.items"
       :desc="colors.description"/>
     </div>
@@ -14,7 +14,8 @@
       :total="price"
       :engine="engines[engineIndex]"
       :color="colors.items[colorIndex]"
-      :wheel="wheels[wheelIndex]"     
+      :wheel="wheels[wheelIndex]"
+      :steep="steeps"  
       v-if="steeps > 0 && steeps<4 && engines.length" />
   </div>
 </template>
@@ -55,8 +56,14 @@ export default {
     next() {
       this.steeps ++;
     },
-    onClickChild(index) {
+    engineChild(index) {
       this.engineIndex = index
+    },
+    colorChild(index) {
+      this.colorIndex = index
+    },
+    wheelChild(index) {
+      this.wheelIndex = index
     }
   },
   mounted: function() {
