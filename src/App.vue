@@ -4,6 +4,9 @@
     <div class="model--wrap">
       <StartApp v-if="steeps===0" :next="next"/>
       <EngineForm @clicked="onClickChild" v-if="steeps===1" :next="next" :engines="engines"/>
+      <ColorForm v-if="steeps === 2" :next="next"
+      :colors="colors.items"
+      :desc="colors.description"/>
     </div>
     <OrgFooter v-if="steeps==0" />
     <OrgFooterInterna 
@@ -22,6 +25,7 @@ import OrgFooter from './components/OrgFooter-home'
 import OrgFooterInterna from './components/OrgFooterResult'
 import StartApp from './components/StartApp'
 import EngineForm from './components/EngineForm'
+import ColorForm from './components/ColorForm'
 import { Request } from './request'
 
 export default {
@@ -32,6 +36,7 @@ export default {
     OrgFooterInterna,
     StartApp,
     EngineForm,
+    ColorForm
   },
   data() {
     return {

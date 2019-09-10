@@ -1,0 +1,26 @@
+.color {
+  &--form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &--item {
+    border-radius: 100%;
+    background: green;
+    border: 10px solid $gray;
+    position: relative;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    img {
+      max-width: 100%;
+      border-radius: 100%;
+      top: 0;
+      left: 0;
+    }
+    input[type=radio] {
+      visibility: hidden;
+    }
+  }
+}
