@@ -7,6 +7,7 @@
       <ColorForm v-if="steeps === 2" :next="next" @clicked="colorChild"
       :colors="colors.items"
       :desc="colors.description"/>
+      <wheelsForm v-if="steeps ===3" />
     </div>
     <OrgFooter v-if="steeps==0" />
     <OrgFooterInterna 
@@ -27,6 +28,7 @@ import OrgFooterInterna from './components/OrgFooterResult'
 import StartApp from './components/StartApp'
 import EngineForm from './components/EngineForm'
 import ColorForm from './components/ColorForm'
+import wheelsForm from './components/wheelsForm'
 import { Request } from './request'
 
 export default {
@@ -37,7 +39,8 @@ export default {
     OrgFooterInterna,
     StartApp,
     EngineForm,
-    ColorForm
+    ColorForm,
+    wheelsForm
   },
   data() {
     return {
