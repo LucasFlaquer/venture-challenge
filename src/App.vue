@@ -9,6 +9,12 @@
       :desc="colors.description"/>
       <wheelsForm v-if="steeps === 3"  @clicked="wheelChild"
       :wheels="wheels"/>
+      <FinalResult v-if="steeps === 4 && engines.length" :reset="reset"
+      :initialPrice="price"
+      :engine="engines[engineIndex]"
+      :color="colors.items[colorIndex]"
+      :wheel="wheels[wheelIndex]"
+      :steep="steeps"/>
     </div>
     <OrgFooter v-if="steeps==0" />
     <OrgFooterInterna 
@@ -30,6 +36,7 @@ import StartApp from './components/StartApp'
 import EngineForm from './components/EngineForm'
 import ColorForm from './components/ColorForm'
 import wheelsForm from './components/wheelsForm'
+import FinalResult from './components/FinalResult'
 import { Request } from './js/request'
 
 export default {
@@ -41,7 +48,8 @@ export default {
     StartApp,
     EngineForm,
     ColorForm,
-    wheelsForm
+    wheelsForm,
+    FinalResult
   },
   data() {
     return {
@@ -59,6 +67,12 @@ export default {
   methods: {
     next() {
       this.steeps ++;
+    },
+    reset() {
+      this.steeps = 0;
+      this.wheelIndex = 0;
+      this.engineIndex = 0;
+      this.colorIndex = 0;
     },
     engineChild(index) {
       this.engineIndex = index
