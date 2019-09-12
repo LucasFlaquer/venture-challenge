@@ -1,0 +1,31 @@
+.wheels {
+  &--form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  &--item {
+    position: relative;
+    opacity: .7;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+    }
+    &.active {
+      opacity: 1;
+    }
+  }
+  &--price {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $dark-red;
+  }
+}

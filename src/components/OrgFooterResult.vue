@@ -16,7 +16,7 @@
         <span class="color" v-bind:style="{backgroundColor: color.hexadecimal}"></span>
       </div>
       <div class="preview--item" v-if="steep > 2 && window>768">
-        
+        <img class="wheel" :src="require(`@/assets/${wheel.label.split('” ')[1]}.jpg`)"/>
       </div>
     </div>
     <a @click="next" href="#" class="btn btn-step">Next</a>

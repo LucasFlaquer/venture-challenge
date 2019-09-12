@@ -3,11 +3,12 @@
     <OrgHeader/>
     <div class="model--wrap">
       <StartApp v-if="steeps===0" :next="next"/>
-      <EngineForm @clicked="engineChild" v-if="steeps===1" :next="next" :engines="engines"/>
-      <ColorForm v-if="steeps === 2" :next="next" @clicked="colorChild"
+      <EngineForm @clicked="engineChild" v-if="steeps===1"  :engines="engines"/>
+      <ColorForm v-if="steeps === 2"  @clicked="colorChild"
       :colors="colors.items"
       :desc="colors.description"/>
-      <wheelsForm v-if="steeps ===3" />
+      <wheelsForm v-if="steeps === 3"  @clicked="wheelChild"
+      :wheels="wheels"/>
     </div>
     <OrgFooter v-if="steeps==0" />
     <OrgFooterInterna 
@@ -44,7 +45,7 @@ export default {
   },
   data() {
     return {
-      steeps: 0,
+      steeps: 3,
       total: 0,
       colors: {},
       wheels:[],
