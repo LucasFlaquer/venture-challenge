@@ -1,5 +1,6 @@
 <template>
   <div class="wheels">
+    <h2 class="option--title">Wheels</h2>
     <form action="" class="wheels--form">
       <label v-for="(wheel,index) in wheels"
       :key="index"

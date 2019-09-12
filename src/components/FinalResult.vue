@@ -1,16 +1,31 @@
 <template>
   <b-container class="final">
     <b-row>
-      <b-col cols="12" md="6">
+      <b-col cols="12" md="8">
         <figure><img :src="carUrl" alt=""></figure>
       </b-col>
-      <b-col cols="12" md="6">
+      <b-col cols="12" md="4">
+        <h2 class="final--title">Your Model <span>R</span></h2>
         <div class="final--list">
-          <p>Starting Price {{initialPrice}}</p>
-          <p>{{engine.kwh}}{{engine.type}}-{{engine.kwh}}kwh - {{engine.miles}}miles range   {{engine.price}}</p>
-          <p>{{color.label}} {{color.price}}</p>
-          <p>{{wheel.label}} {{wheel.price}}</p>
-          <p>Final Price {{total}}</p>
+          <div class="final--item">
+            <p>Starting Price</p>
+            <span>{{initialPrice}}</span>
+          </div>
+          <div class="final--item">
+            <p>{{engine.kwh}}{{engine.type}}-{{engine.kwh}}kwh - {{engine.miles}}miles range</p>
+            <span>{{engine.price}}</span>
+          </div>
+          <div class="final--item">
+            <p>{{color.label}}</p>
+            <span>{{color.price}}</span>
+          </div>
+          <div class="final--item">
+            <p>{{wheel.label}} <span>{{wheel.price}}</span></p>
+          </div>
+          <div class="final--item">
+            <p>Final Price</p>
+            <strong>{{total}}</strong>
+          </div>
         </div>
         <p><a @click="reset" href="#" class="btn btn-restart">Rebuild</a></p>
       </b-col>
@@ -35,8 +50,11 @@ export default {
     }
   },
   created() {
-    this.total = engine.price + color.price + wheel.price;
+    this.total =this.initialPrice + this.engine.price + this.color.price + this.wheel.price;
     // if ()
   }
 }
 </script>
+<style lang="scss">
+  @import "~@/scss/molecules/final"
+</style>

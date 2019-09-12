@@ -9,8 +9,8 @@
         </figure>
       </b-col>
       <b-col cols="12" lg="6">
-          <h2 class="option--title">Color</h2>
-          {{desc}}
+        <h2 class="option--title">Color</h2>
+        <p class="color--desc">{{desc}}</p>
         <form action="" class="color--form">
             <label v-for="(color, index) in colors" 
             :key="index"

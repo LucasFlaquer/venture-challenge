@@ -8,17 +8,17 @@
         </picture>
       </b-col>
       <b-col cols="12" md="6">
-          <h2 class="option--title">Engine</h2>
-        <form action="" class="engine--form">
+          <h2 class="engine--title">Engine</h2>
+        <form action="" class="option--form">
             <label v-for="(engine,index) in engines" 
                    :key="engine.id"
                    :for="'engine'+engine.id"
                    class="engine--item" 
                    :class="engineSelected === engine.id ? 'active': ''"
                    @click="changeImage(engine.id); emit(index)">  
-              <p>{{engine.kwh}}<span>{{engine.type}}</span></p>
-              <p>{{engine.kwh}}<span>kwp</span></p>
-              <p>{{engine.range}}<span>miles range</span></p>
+              <p>{{engine.kwh}} <span>{{engine.type}}</span></p>
+              <p>{{engine.kwh}} <span>kwp</span></p>
+              <p>{{engine.range}} <span>miles range</span></p>
               <div class="custom-check">
                 <input type="radio" 
               v-model="engineSelected"

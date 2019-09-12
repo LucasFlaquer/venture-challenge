@@ -9,7 +9,7 @@
   &--item {
     width: 100%;
     padding: 20px 15px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     background-color: rgb(224, 226, 226);
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,16 @@
     cursor: pointer;
     p {
       margin-bottom: 0;
+      font-size: 22px;
+      &:first-child {
+        font-size: 34px;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+    &--type {
+      font-size: 34px;
     }
     &.active {
       p {
@@ -36,9 +46,10 @@
   }
   &--price {
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     right: 0;
     color: $dark-red;
+    font-size: 22px;
     
   }
   &--image {

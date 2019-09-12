@@ -10,10 +10,14 @@ body {
 
 @media(min-width: 992px) {
   .model--wrap {
-    min-height: 500px;
+    min-height: 515px;
   }
 }
-  
+.option--title {
+  font-size: 45px;
+  font-weight: 300;
+  color: $black;
+}
 .btn {
   &-step {
     text-decoration: none;
