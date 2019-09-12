@@ -8,19 +8,22 @@
       @click="emit(index)"
       :class="wheelSelected === index?'active':''">
         <img :src="require(`@/assets/${wheel.label.split('” ')[1]}.jpg`)"/>
-        
         <input type="radio" 
         :value="index" 
         name="wheel" 
         v-model="wheelSelected"
         :id="'wheel'+index">
-        <span v-show="wheelSelected === index" class="wheels--price">{{wheel.price | exibePreco}}</span>
+        <p class="wheels--info" v-show="wheelSelected === index">
+          {{wheel.label}}
+          <span >{{wheel.price | exibePreco}}</span>
+        </p>
       </label>
     </form>
   </div>
 </template>
 
 <script>
+import {formatter} from '../js/numberFormater'
 export default {
   props: {
     wheels: Array,
@@ -40,11 +43,11 @@ export default {
     }
   },
   filters: {
-    exibePreco(preco) {
-      if(preco === 0) {
+    exibePreco(price) {
+      if(price === 0) {
         return 'included'
       } else
-        return `+$${preco}`
+        return `+${(formatter.format(price)).replace(',', '.')}`; 
     }
   }
 }

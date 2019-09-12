@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import {formatter} from '../js/numberFormater'
 export default {
   data() {
     return {
@@ -63,7 +64,7 @@ export default {
       if(price === 0)
         return `included`
       else
-        return price
+        return `+${(formatter.format(price)).replace(',', '.')}`; 
     }
   }
 }

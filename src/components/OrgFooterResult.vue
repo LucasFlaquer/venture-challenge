@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { formatter } from '../js/numberFormater';
 export default {
   props: {
     next: Function,
@@ -42,9 +43,7 @@ export default {
   },
   filters: {
     formatPrice(price) {
-      // let price2 = price.toString();
-      // return `$${price2[0]}${price2[1]}.${price2[ ...]}`
-      return `$${(price).toFixed(0).replace(/\d(?=(\d{2})+\.)/g, '$&,')}`;
+      return (formatter.format(price)).replace(',', '.'); 
     }
   },
   created() {

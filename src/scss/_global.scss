@@ -10,7 +10,7 @@ body {
 
 @media(min-width: 992px) {
   .model--wrap {
-    height: calc(100vh - 170px);
+    min-height: 500px;
   }
 }
   

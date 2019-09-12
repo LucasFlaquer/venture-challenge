@@ -30,7 +30,7 @@ import StartApp from './components/StartApp'
 import EngineForm from './components/EngineForm'
 import ColorForm from './components/ColorForm'
 import wheelsForm from './components/wheelsForm'
-import { Request } from './request'
+import { Request } from './js/request'
 
 export default {
   name: 'app',
@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      steeps: 3,
+      steeps: 1,
       total: 0,
       colors: {},
       wheels:[],

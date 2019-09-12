@@ -29,7 +29,7 @@
               </div>
               <span v-if="engine.price>0"
                     v-show="engineSelected === engine.id"
-                    class="engine--price">+${{engine.price | priceFormat}}</span>
+                    class="engine--price">{{engine.price | formatPrice}}</span>
             </label>
           </form>        
       </b-col>
@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import {formatter} from '../js/numberFormater'
 export default {
   data() {
     return {
@@ -65,8 +66,8 @@ export default {
 		}
   },
   filters: {
-    priceFormat(price) {
-      return (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    formatPrice(price) {
+      return  `+${(formatter.format(price)).replace(',', '.')}`; 
     }
   }
 }
