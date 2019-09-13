@@ -1,16 +1,18 @@
 <template>
   <b-container class="color">
+    <h2 v-if="window<768" class="option--title">Color</h2>
+    <p v-if="window<768" class="color--desc">{{desc}}</p>
     <b-row>
-      <b-col cols="12" lg="6">
+      <b-col cols="12" md="6">
         <figure class="color--image">
           <img :src="imageUrl" alt="">
           <figcaption>{{colors[colorSelected].label }}</figcaption>
           <figcaption>{{colors[colorSelected].price | exibePreco }}</figcaption>
         </figure>
       </b-col>
-      <b-col cols="12" lg="6">
-        <h2 class="option--title">Color</h2>
-        <p class="color--desc">{{desc}}</p>
+      <b-col cols="12" md="6">
+        <h2 v-if="window>=768" class="option--title">Color</h2>
+        <p v-if="window>=768" class="color--desc">{{desc}}</p>
         <form action="" class="color--form">
             <label v-for="(color, index) in colors" 
             :key="index"
@@ -33,6 +35,7 @@ export default {
   data() {
     return {
       colorSelected: 0,
+      window:0,
       imageUrl:require(`@/assets/Red.jpg`),
       dotUrl: [
         require(`@/assets/red-dot.jpg`),
@@ -57,7 +60,10 @@ export default {
     },
     emit(color) {
 			this.$emit('clicked',color);
-		}
+    },
+    handleResize() {
+      this.window = window.innerWidth;
+    }
   },
   filters: {
     exibePreco(price) {
@@ -66,7 +72,15 @@ export default {
       else
         return `+${(formatter.format(price)).replace(',', '.')}`; 
     }
-  }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+    
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
 }
 </script>
 <style lang="scss">

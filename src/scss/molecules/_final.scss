@@ -62,3 +62,31 @@
     }
   }
 }
+@media (max-width: 991px) {
+  .final {
+    &--image {
+      margin-right: 50px;
+    }
+  }
+}
+@media(max-width: 767px) {
+  .final {
+    flex-direction: column;
+
+    &--title {
+      align-self: flex-start;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    &--content {
+      width: 100%;
+    }
+  }
+}
+@media(max-width: 575px) {
+  .final {
+    &--title {
+      font-size: 22px;
+    }
+  }
+}

@@ -9,7 +9,7 @@
       <div class="preview--item" v-if="window>768">
         <p>Model R</p>
       </div>
-      <div class="preview--item">
+      <div class="preview--item" v-if="window>768">
         <p>{{engine.kwh}} <span>{{engine.type}}</span></p>
       </div>
       <div class="preview--item" v-if="steep > 1 && window>768">

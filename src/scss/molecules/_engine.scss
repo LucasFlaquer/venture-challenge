@@ -64,9 +64,17 @@
 
 @media(max-width: 991px) {
   .engine {
+    margin-bottom: 20px;
     &--image {
       padding: 15px;
-      // height: 320px;
+    }
+    &--item {
+      p {
+        font-size: 18px;
+      }
+      &::first-child {
+        font-size: 25px;
+      }
     }
   }
 }
@@ -77,6 +85,17 @@
       img {
         height: auto;
         max-width: 100%;
+      }
+    }
+    &--title {
+      visibility: hidden; 
+    }
+    &--item {
+      p {
+        font-size: 16px;
+      }
+      &::first-child {
+        font-size: 22px;
       }
     }
   }

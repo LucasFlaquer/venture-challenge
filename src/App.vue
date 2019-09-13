@@ -4,7 +4,7 @@
     <div class="model--wrap">
       <StartApp v-if="steeps===0" :next="next"/>
       <EngineForm @clicked="engineChild" v-if="steeps===1"  :engines="engines"/>
-      <ColorForm v-if="steeps === 2"  @clicked="colorChild"
+      <ColorForm v-if="steeps === 2 && engines.length"  @clicked="colorChild"
       :colors="colors.items"
       :desc="colors.description"/>
       <wheelsForm v-if="steeps === 3"  @clicked="wheelChild"
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      steeps: 0,
+      steeps: 4,
       total: 0,
       colors: {},
       wheels:[],
@@ -91,6 +91,7 @@ export default {
       this.wheels = response.data.wheels.items;
       this.engines = response.data.engine.items;
       this.price = response.data.price;
+
     })
     .catch((error)=> {
       console.log(error);

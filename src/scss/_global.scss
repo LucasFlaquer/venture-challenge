@@ -13,21 +13,30 @@ body {
     min-height: 515px;
   }
 }
+@media(min-width: 768px) and (max-width: 991px) {
+  .model--wrap {
+    min-height: 415px;
+  }
+}
 .option--title {
   font-size: 45px;
   font-weight: 300;
   color: $black;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
 }
 .btn {
   text-decoration: none;
   color: black;
   font-weight: 300; 
   font-size: 16px;
-  text-transform: uppercase;
   letter-spacing: 5px;
   position: relative;
   &-step {
     &:before {
+      text-transform: uppercase;
       content: "";
       position: absolute;
       height: 15px;

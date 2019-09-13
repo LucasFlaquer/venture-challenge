@@ -16,6 +16,7 @@
     opacity: .7;
     transition: all .3s ease;
     flex-basis: 15%;
+   
     input {
       position: absolute;
       top: 0;
@@ -31,6 +32,7 @@
     &.active {
       opacity: 1;
       transform: scale(1.2);
+      order: 0
     }
   }
   &--info {
@@ -45,6 +47,31 @@
     span {
       color: $dark-red;
       display: block;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .wheels {
+    min-height: 400px;
+    // min-height: 300px;
+    &--wrap {
+      overflow-x: auto;
+    }
+    &--form {
+      margin-bottom: 20px;
+      width: calc(100% + 300px);
+      flex-wrap: nowrap;
+      padding: 10px 0;
+
+    }
+    &--item {
+      // flex-basis: 33%;
+      margin-bottom: 60px;
+      min-width: 200px;;
+    }
+    &--info {
+      font-size: 16px;
     }
   }
 }

@@ -1,8 +1,9 @@
 <template>
   <b-container class="final">
+    <h2 class="final--title" v-if="window<768">Your Model <span>R</span></h2>
     <figure class="final--image"><img :src="carUrl" alt=""></figure>
     <div class="final--content">
-      <h2 class="final--title">Your Model <span>R</span></h2>
+      <h2 class="final--title" v-if="window>=768">Your Model <span>R</span></h2>
       <div class="final--list">
         <div class="final--item">
           <p>Starting Price</p>
@@ -44,6 +45,7 @@ export default {
   data() {
     return {
       total: 0,
+      window: 0,
       carUrl: require(`@/assets/finalblue.jpg`)
     }
   },
@@ -62,6 +64,13 @@ export default {
         require(`@/assets/finalgrey.jpg`)
         break;
     }
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  },
+  methods: {
+    handleResize() {
+      this.window = window.innerWidth;
+    }
   },
   filters: {
     formatPriceAditional(price) {
@@ -72,7 +81,10 @@ export default {
     },
     formatPrice(price) {
       return (formatter.format(price)).replace(',', '.');
-    }
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize)
+    },
   }
 }
 </script>
