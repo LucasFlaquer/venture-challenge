@@ -17,4 +17,4 @@ yarn run serve
 yarn run build
 ```
 ### Run live
-  (lucasflaquer.github.io/venture-challenge)[https://lucasflaquer.github.io/venture-challenge/]
+  lucasflaquer.github.io/venture-challenge[https://lucasflaquer.github.io/venture-challenge/]
