@@ -54,14 +54,14 @@ export default {
     
     switch (this.color.hexadecimal) {
       case '#AB1725':
-        require(`@/assets/finalred.jpg`)
+        this.carUrl = require(`@/assets/finalred.jpg`)
         break;
       case '#0F1C2D':
-        require(`@/assets/finalblue.jpg`)
+        this.carUrl = require(`@/assets/finalblue.jpg`)
         break;
 
       case '#A8A8A8':
-        require(`@/assets/finalgrey.jpg`)
+        this.carUrl = require(`@/assets/finalgrey.jpg`)
         break;
     }
     window.addEventListener('resize', this.handleResize)
